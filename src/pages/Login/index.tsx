@@ -1,8 +1,13 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { api } from "../../services";
 import { Alert, TextField } from "@mui/material";
+import LinearProgress from '@mui/material/LinearProgress';
+
+import { useNavigate } from "react-router-dom";
 
 export function Login() {
+
+    let token = "";
 
     const [user, setUser] = useState("");
     const [password, setPassword] = useState("");
@@ -11,6 +16,8 @@ export function Login() {
     const [error, setError] = useState(false);
 
     const [textoVisivel, setTextoVisivel] = useState(true);
+
+    const navigate = useNavigate();
 
     function showError() {
         const timer = setTimeout(() => {
@@ -32,23 +39,29 @@ export function Login() {
                 password: password,
             })
             .then((response) => {
-                console.log(response.data);
+                const token = response.data.token;
+                console.log(token);
                 setisLogin(true);
+                setTimeout(() => {
+                    navigate('/list-medications', { state: { token } });
+                }, 3000);
             })
             .catch((error) => {
                 console.log(error.message);
                 setError(true);
                 showError();
-            })
+            });
     }
+
+
 
     return (
         <>
             {
                 isLogin && (
-                    <Alert variant="filled" severity="success">
-                        successfully logged in!
-                    </Alert>
+                    <div className="">
+                        <LinearProgress color="secondary" />
+                    </div>
                 )
             }
 
