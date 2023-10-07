@@ -111,7 +111,7 @@ export function Login() {
                         </button>
                     </form>
 
-                    <p className="mt-10 font-light">Don’t have an account? <span className="font-bold cursor-pointer">Sign Up</span></p>
+                    <p className="mt-12 font-light">Don’t have an account? <span className="font-bold cursor-pointer">Sign Up</span></p>
                 </div>
             </section>
         </>
