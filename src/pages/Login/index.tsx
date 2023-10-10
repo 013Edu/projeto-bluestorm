@@ -1,22 +1,16 @@
-import { useState } from "react"
 import { api } from "../../services";
 import { Alert, TextField } from "@mui/material";
 import LinearProgress from '@mui/material/LinearProgress';
+import { useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 
 export function Login() {
-
-    let token = "";
-
     const [user, setUser] = useState("");
     const [password, setPassword] = useState("");
-
-    const [isLogin, setisLogin] = useState(false);
+    const [isLogin, setIsLogin] = useState(false);
     const [error, setError] = useState(false);
-
     const [textoVisivel, setTextoVisivel] = useState(true);
-
     const navigate = useNavigate();
 
     function showError() {
@@ -33,6 +27,9 @@ export function Login() {
     }
 
     function onLogin() {
+        setIsLogin(true); // Defina isLogin como true antes de fazer a chamada à API
+        setError(false); // Limpe o estado de erro
+
         api
             .post("/login", {
                 username: user,
@@ -41,19 +38,17 @@ export function Login() {
             .then((response) => {
                 const token = response.data.token;
                 console.log(token);
-                setisLogin(true);
                 setTimeout(() => {
-                    navigate('/list-medications', { state: { token } });
+                    navigate('/list-medications', { state: { token } }); // Passe o token como parte do estado
                 }, 3000);
             })
             .catch((error) => {
                 console.log(error.message);
                 setError(true);
+                setIsLogin(false); // Defina isLogin como false em caso de erro
                 showError();
             });
     }
-
-
 
     return (
         <>
@@ -69,7 +64,7 @@ export function Login() {
                 textoVisivel && (
                     error && (
                         <Alert variant="filled" severity="error">
-                            error when logging in!
+                            Error when logging in!
                         </Alert>
                     )
                 )
