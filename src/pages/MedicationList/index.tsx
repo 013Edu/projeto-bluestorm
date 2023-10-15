@@ -60,8 +60,9 @@ export function MedicationList() {
         searchMedication(1, currentMedication);
     }
 
-    const handlePageChange = (page: number) => {
+    const handlePageChange = (event: React.ChangeEvent<unknown>, page: number) => {
         setCurrentPage(page);
+        console.log(event);
     };
 
     function getMedications(page: number) {
