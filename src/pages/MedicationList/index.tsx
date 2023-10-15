@@ -139,10 +139,6 @@ export function MedicationList() {
         console.log(token);
     }, [currentPage]);
 
-    function onSubmit(e: any) {
-        e.preventDefault();
-    }
-
     return (
         <div>
             <div>
@@ -192,7 +188,8 @@ export function MedicationList() {
                                 label="Units per package"
                                 variant="standard"
                                 value={unit}
-                                onChange={(e) => setUnit(e.target.value)}
+                                onChange={(e) => setUnit(parseInt(e.target.value, 10))
+                                }
                             />
 
                             <TextField
