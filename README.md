@@ -1,7 +1,7 @@
 
 # Cadastro e Pesquisa de Medicamentos
 
-Este é um projeto de exemplo que demonstra como criar um aplicativo de cadastro e pesquisa de medicamentos usando React, Material-UI e TypeScript. Ele consome uma API de um sistema de gerenciamento de medicamentos para exibir, adicionar, atualizar e excluir medicamentos.
+Este é um projeto de exemplo que demonstra como criar um aplicativo de cadastro e pesquisa de medicamentos usando React, Material-UI e TypeScript. Ele consome uma API de um sistema de gerenciamento de medicamentos para exibir, adicionar  medicamentos.
 
 ## Funcionalidades
 
