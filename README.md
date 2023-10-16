@@ -1,27 +1,28 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Cadastro e Pesquisa de Medicamentos
 
-Currently, two official plugins are available:
+Este é um projeto de exemplo que demonstra como criar um aplicativo de cadastro e pesquisa de medicamentos usando React, Material-UI e TypeScript. Ele consome uma API de um sistema de gerenciamento de medicamentos para exibir, adicionar, atualizar e excluir medicamentos.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Funcionalidades
 
-## Expanding the ESLint configuration
+- Lista de medicamentos: Exibe uma lista de medicamentos a partir da API, incluindo informações como nome, dosagem e fabricante.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Pesquisa de Medicamentos: Permite aos usuários pesquisar medicamentos por nome ou outras informações.
 
-- Configure the top-level `parserOptions` property like this:
+- Adicionar Medicamento: Permite aos usuários adicionar um novo medicamento ao sistema.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+## Pré-requisitos
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Node.js: Certifique-se de que você tenha o Node.js instalado na sua máquina. Você pode baixá-lo em [nodejs.org](https://nodejs.org/).
+
+## Instalação
+
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/seu-usuario/cadastro-pesquisa-medicamentos.git
+
+   ## Observações
+
+- Na hora de casdastrar um medicamento utilize esse formato de data:
+- 2023-12-10T16:11:53.178Z
